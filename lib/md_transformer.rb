@@ -1,6 +1,7 @@
-require "md_transformer/version"
+require 'md_transformer/version'
+require 'md_transformer/markdown'
 
 module MdTransformer
-  class Error < StandardError; end
-  # Your code goes here...
+  class Error < ::StandardError; end
+  class InvalidMarkdownPath < MdTransformer::Error; end
 end
