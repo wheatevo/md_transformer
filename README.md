@@ -1,8 +1,15 @@
-# MdTransformer
+# md_transformer
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/md_transformer`. To experiment with that code, run `bin/console` for an interactive prompt.
+The md_transformer gem provides a way to read, modify, and write Markdown much as a hash with header keys and markdown content values.
 
-TODO: Delete this and the text above, and describe your gem
+```ruby
+require 'md_transformer'
+
+# Create a new markdown object and manipulate it
+md = MdTransformer.markdown("# md_transformer\n\nThe md_transformer gem...\n")
+md['md_transformer']['Installation'] = "Add this line to your application's Gemfile"
+md.write('my_new_readme.md')
+```
 
 ## Installation
 
@@ -32,7 +39,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/md_transformer.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wheatevo/md_transformer.
 
 ## License
 
