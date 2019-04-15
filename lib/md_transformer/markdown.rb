@@ -38,6 +38,7 @@ module MdTransformer
         source = File.read(source)
         @title ||= options[:file]
       end
+      source = translate(source)
       parse!(source)
     end
 
@@ -176,6 +177,13 @@ module MdTransformer
 
       child.children.each { |c| validate_levels(c) }
       child
+    end
+
+    # Translates content to markdown prior to parsing
+    # @param content [String] the string Markdown content to translate
+    # @return [String] the translated content
+    def translate(content)
+      content.gsub(%r{<h([1-6])>(.*?)</h[1-6]>}m) { '#' * Regexp.last_match[1].to_i + ' ' + Regexp.last_match[2] }
     end
 
     # Parses the provided markdown string content into a the current object's content and children

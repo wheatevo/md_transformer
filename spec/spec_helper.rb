@@ -18,6 +18,10 @@ RSpec.configure do |config|
     @skip_md_content = File.read(@skip_md_path)
     @skip_fixed_md_path = File.expand_path('support/skip_fixed.md', File.dirname(__FILE__))
     @skip_fixed_md_content = File.read(@skip_fixed_md_path)
+    @mixed_md_path = File.expand_path('support/mixed.md', File.dirname(__FILE__))
+    @mixed_md_content = File.read(@mixed_md_path)
+    @mixed_fixed_md_path = File.expand_path('support/mixed_fixed.md', File.dirname(__FILE__))
+    @mixed_fixed_md_content = File.read(@mixed_fixed_md_path)
     @temp_dir = temp_dir
   end
 

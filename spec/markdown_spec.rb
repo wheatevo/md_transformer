@@ -217,6 +217,13 @@ RSpec.describe MdTransformer::Markdown do
         expect(md.to_s).to eq(@skip_fixed_md_content)
       end
     end
+
+    context 'when initialized with a markdown file with HTML headers' do
+      let(:md) { described_class.new(@mixed_md_path, file: true) }
+      it 'coerces HTML-style headers into markdown-style headers' do
+        expect(md.to_s).to eq(@mixed_fixed_md_content)
+      end
+    end
   end
 
   describe '#write' do
