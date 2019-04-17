@@ -1,5 +1,7 @@
 # md_transformer
 
+[![Gem Version](https://badge.fury.io/rb/md_transformer.svg)](https://badge.fury.io/rb/md_transformer) [![Build Status](https://travis-ci.com/wheatevo/md_transformer.svg?branch=master)](https://travis-ci.com/wheatevo/md_transformer)
+
 The md_transformer gem provides a way to read, modify, and write Markdown much as a hash with header keys and markdown content values.
 
 This code:
